@@ -11,23 +11,26 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --primary: #1a2a4a;
-    --primary-mid: #1e3a6e;
-    --accent: #0077cc;
-    --accent-light: #e8f4fd;
-    --accent-hover: #005fa3;
-    --green: #2ecc8a;
-    --green-bg: #e8faf4;
-    --text: #1a2a4a;
+    /* Paleta tomada de tresite.com: navy de marca, teal secundario y verde lima de acento */
+    --primary: #1f3b58;
+    --primary-mid: #26415f;
+    --accent: #1a6868;
+    --accent-light: #e3f2f0;
+    --accent-hover: #0f4f4f;
+    --green: #afdd3c;
+    --green-bg: #eef8e3;
+    --green-dark: #3a8f52;
+    --text: #1f3b58;
     --text-mid: #4a5568;
     --text-light: #718096;
     --bg: #ffffff;
     --bg-alt: #f7f9fc;
-    --bg-dark: #0e1c36;
+    --bg-dark: #1a3049;
     --border: #e2e8f0;
     --radius: 10px;
     --radius-lg: 16px;
-    --shadow: 0 4px 20px rgba(0,119,204,0.08);
+    --radius-pill: 999px;
+    --shadow: 0 4px 20px rgba(26,104,104,0.1);
     --font: 'Nunito Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
   }
 
@@ -57,7 +60,7 @@
 
   /* ── HERO ── */
   .hero {
-    background: linear-gradient(135deg, #0e1c36 0%, #1a3a6e 60%, #0e2d5e 100%);
+    background: linear-gradient(135deg, #16293d 0%, #1f3b58 55%, #1a3049 100%);
     color: #fff;
     padding: 80px 0 72px;
     position: relative;
@@ -69,7 +72,7 @@
     top: -80px; right: -80px;
     width: 420px; height: 420px;
     border-radius: 50%;
-    background: rgba(0,119,204,0.12);
+    background: rgba(26,104,104,0.18);
   }
   .hero::after {
     content: '';
@@ -77,14 +80,14 @@
     bottom: -60px; left: -60px;
     width: 280px; height: 280px;
     border-radius: 50%;
-    background: rgba(46,204,138,0.08);
+    background: rgba(175,221,60,0.08);
   }
   .hero .container { position: relative; z-index: 1; }
   .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
   .hero-badge {
     display: inline-block;
-    background: rgba(46,204,138,0.18);
-    color: #2ecc8a;
+    background: rgba(175,221,60,0.18);
+    color: var(--green);
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -100,7 +103,7 @@
     margin-bottom: 18px;
     color: #fff;
   }
-  .hero h1 span { color: #2ecc8a; }
+  .hero h1 span { color: var(--green); }
   .hero-sub {
     font-size: 17px;
     color: rgba(255,255,255,0.82);
@@ -117,22 +120,22 @@
     content: '';
     width: 7px; height: 7px;
     border-radius: 50%;
-    background: #2ecc8a;
+    background: var(--green);
     flex-shrink: 0;
   }
   .btn-group { display: flex; gap: 12px; flex-wrap: wrap; }
   .btn-primary {
     display: inline-block;
-    background: #2ecc8a;
-    color: #0e1c36;
+    background: var(--green);
+    color: var(--primary);
     font-weight: 700;
     font-size: 15px;
     padding: 13px 28px;
-    border-radius: var(--radius);
+    border-radius: var(--radius-pill);
     text-decoration: none;
     transition: background 0.2s, transform 0.1s;
   }
-  .btn-primary:hover { background: #26b87c; transform: translateY(-1px); }
+  .btn-primary:hover { background: #9bc92f; transform: translateY(-1px); }
   .btn-outline {
     display: inline-block;
     background: transparent;
@@ -140,7 +143,7 @@
     font-weight: 600;
     font-size: 15px;
     padding: 12px 28px;
-    border-radius: var(--radius);
+    border-radius: var(--radius-pill);
     text-decoration: none;
     border: 1.5px solid rgba(255,255,255,0.4);
     transition: border-color 0.2s, background 0.2s;
@@ -174,10 +177,10 @@
   }
   .cms-block.wide { flex: 2; }
   .cms-block.narrow { flex: 1; }
-  .cms-stat { font-size: 20px; font-weight: 700; color: #2ecc8a; }
+  .cms-stat { font-size: 20px; font-weight: 700; color: var(--green); }
   .cms-label { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 2px; }
   .cms-chart-row { display: flex; align-items: flex-end; gap: 6px; margin-top: 10px; height: 40px; }
-  .cms-bar-item { flex: 1; background: rgba(0,119,204,0.5); border-radius: 3px 3px 0 0; }
+  .cms-bar-item { flex: 1; background: rgba(90,194,194,0.55); border-radius: 3px 3px 0 0; }
 
   /* ── SECTIONS ── */
   section { padding: 72px 0; }
@@ -192,7 +195,7 @@
     color: var(--accent);
     margin-bottom: 10px;
   }
-  .section-label.on-dark { color: #2ecc8a; }
+  .section-label.on-dark { color: var(--green); }
   h2 {
     font-size: clamp(22px, 3vw, 34px);
     font-weight: 800;
@@ -224,7 +227,7 @@
   .problem-icon {
     width: 42px; height: 42px;
     border-radius: 10px;
-    background: #fff0f0;
+    background: var(--accent-light);
     display: flex; align-items: center; justify-content: center;
     margin-bottom: 14px;
     font-size: 20px;
@@ -273,8 +276,8 @@
     border-radius: 8px;
     font-size: 13px; font-weight: 700;
   }
-  .arch-layer.top { background: rgba(46,204,138,0.2); color: #2ecc8a; }
-  .arch-layer.mid { background: rgba(0,119,204,0.25); color: #60b0f0; }
+  .arch-layer.top { background: rgba(175,221,60,0.2); color: var(--green); }
+  .arch-layer.mid { background: rgba(90,194,194,0.25); color: #8fd4d4; }
   .arch-layer.base { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); font-weight: 400; font-size: 12px; }
   .arch-layer span { opacity: 0.6; font-weight: 400; margin-left: 6px; font-size: 11px; }
 
@@ -287,7 +290,7 @@
     padding: 22px;
     transition: box-shadow 0.2s, border-color 0.2s;
   }
-  .feature-card:hover { box-shadow: var(--shadow); border-color: #b3d7f5; }
+  .feature-card:hover { box-shadow: var(--shadow); border-color: #a9d6d6; }
   .feature-icon {
     width: 44px; height: 44px;
     border-radius: 10px;
@@ -321,22 +324,22 @@
     padding: 24px;
     transition: background 0.2s, border-color 0.2s;
   }
-  .module-card:hover { background: rgba(255,255,255,0.08); border-color: rgba(0,119,204,0.5); }
+  .module-card:hover { background: rgba(255,255,255,0.08); border-color: rgba(90,194,194,0.5); }
   .module-num {
     font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
-    color: #2ecc8a; text-transform: uppercase; margin-bottom: 8px;
+    color: var(--green); text-transform: uppercase; margin-bottom: 8px;
   }
   .module-card h3 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
   .module-card p { font-size: 13px; color: rgba(255,255,255,0.6); }
   .modules-cta {
     text-align: center;
-    background: rgba(46,204,138,0.1);
-    border: 1px solid rgba(46,204,138,0.25);
+    background: rgba(175,221,60,0.12);
+    border: 1px solid rgba(175,221,60,0.3);
     border-radius: var(--radius-lg);
     padding: 20px;
     font-size: 16px;
     font-weight: 700;
-    color: #2ecc8a;
+    color: var(--green);
   }
 
   /* ── HOW IT WORKS ── */
@@ -401,16 +404,16 @@
   .diff-item:hover { background: rgba(255,255,255,0.08); }
   .diff-dot {
     width: 8px; height: 8px; border-radius: 50%;
-    background: #2ecc8a;
+    background: var(--green);
     flex-shrink: 0; margin-top: 6px;
   }
   .diff-item h3 { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 4px; }
   .diff-item p { font-size: 12px; color: rgba(255,255,255,0.55); line-height: 1.5; }
 
-  /* ── CTA FINAL ── */
+  /* ── CTA FINAL (fondo verde lima, como el cierre de tresite.com) ── */
   .cta-final {
-    background: linear-gradient(135deg, #0e1c36, #1a3a6e);
-    color: #fff;
+    background: var(--green);
+    color: var(--primary);
     text-align: center;
     padding: 80px 24px;
     border-radius: var(--radius-lg);
@@ -422,25 +425,30 @@
     content: '';
     position: absolute; top: -60px; right: -60px;
     width: 300px; height: 300px; border-radius: 50%;
-    background: rgba(46,204,138,0.08);
+    background: rgba(255,255,255,0.15);
   }
-  .cta-final h2 { color: #fff; font-size: 32px; margin-bottom: 14px; position: relative; }
-  .cta-final p { color: rgba(255,255,255,0.75); font-size: 17px; max-width: 540px; margin: 0 auto 32px; position: relative; }
+  .cta-final h2 { color: var(--primary); font-size: 32px; margin-bottom: 14px; position: relative; }
+  .cta-final p { color: rgba(31,59,88,0.8); font-size: 17px; max-width: 540px; margin: 0 auto 32px; position: relative; }
   .cta-final .btn-group { justify-content: center; position: relative; }
+  .cta-final .btn-primary { background: var(--primary); color: #fff; }
+  .cta-final .btn-primary:hover { background: var(--primary-mid); }
+  .cta-final .btn-outline { color: var(--primary); border-color: rgba(31,59,88,0.4); }
+  .cta-final .btn-outline:hover { border-color: var(--primary); background: rgba(31,59,88,0.06); }
 
-  /* ── FOOTER ── */
+  /* ── FOOTER (fondo claro, como en tresite.com) ── */
   .footer {
-    background: #070e1e;
-    color: rgba(255,255,255,0.5);
+    background: var(--bg-alt);
+    color: var(--text-light);
     padding: 36px 0 24px;
     font-size: 13px;
+    border-top: 1px solid var(--border);
   }
   .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-  .footer-brand { color: rgba(255,255,255,0.85); font-weight: 700; font-size: 14px; }
+  .footer-brand { color: var(--primary); font-weight: 700; font-size: 14px; }
   .footer-links { display: flex; gap: 20px; }
-  .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
-  .footer-links a:hover { color: #2ecc8a; }
-  .footer-copy { width: 100%; text-align: center; margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.07); }
+  .footer-links a { color: var(--green-dark); text-decoration: none; transition: color 0.2s; font-weight: 600; }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-copy { width: 100%; text-align: center; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
@@ -491,7 +499,7 @@
                 <div class="cms-label">Artículos publicados</div>
               </div>
               <div class="cms-block narrow">
-                <div class="cms-stat" style="color:#60b0f0;">98.2%</div>
+                <div class="cms-stat" style="color:#8fd4d4;">98.2%</div>
                 <div class="cms-label">Disponibilidad</div>
               </div>
             </div>
@@ -504,14 +512,14 @@
                   <div class="cms-bar-item" style="height:45%;"></div>
                   <div class="cms-bar-item" style="height:85%;"></div>
                   <div class="cms-bar-item" style="height:60%;"></div>
-                  <div class="cms-bar-item" style="height:95%;background:rgba(46,204,138,0.6);"></div>
+                  <div class="cms-bar-item" style="height:95%;background:rgba(175,221,60,0.75);"></div>
                   <div class="cms-bar-item" style="height:75%;"></div>
                 </div>
               </div>
             </div>
             <div class="cms-row">
-              <div class="cms-block wide" style="background:rgba(46,204,138,0.1);border:1px solid rgba(46,204,138,0.2);">
-                <span style="color:#2ecc8a;font-size:11px;font-weight:700;">● ACTIVO</span>
+              <div class="cms-block wide" style="background:rgba(175,221,60,0.12);border:1px solid rgba(175,221,60,0.25);">
+                <span style="color:#afdd3c;font-size:11px;font-weight:700;">● ACTIVO</span>
                 <span style="color:rgba(255,255,255,0.6);font-size:11px;margin-left:8px;">Azure · CDN · SEO · Editor</span>
               </div>
             </div>
@@ -591,7 +599,7 @@
           <div class="arch-stack">
             <div class="arch-layer top">SACS Pro+ <span>Nivel empresarial</span></div>
             <div class="arch-layer mid">SACS Pro <span>Crecimiento acelerado</span></div>
-            <div class="arch-layer mid" style="background:rgba(0,119,204,0.15);color:#90c8f5;">SACS Start <span style="color:#2ecc8a;font-weight:700;">← Aquí empiezas</span></div>
+            <div class="arch-layer mid" style="background:rgba(175,221,60,0.15);color:#c9eb7a;">SACS Start <span style="color:#afdd3c;font-weight:700;">← Aquí empiezas</span></div>
             <div class="arch-layer base">Infraestructura Azure · CDN · 99.95% uptime · Sin licencias</div>
           </div>
         </div>
